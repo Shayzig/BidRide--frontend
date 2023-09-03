@@ -1,0 +1,65 @@
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    box-shadow: 0 0 3px rgba(211, 211, 211, 0.536);
+    width: max-content;
+
+    .custom-select {
+        position: relative;
+        display: inline-block;
+        width: max-content;
+    }
+
+    select {
+        appearance: none;
+        padding: 0.7em 1em;
+        border: none;
+        border-radius: 0.2em;
+        background-color: transparent;
+        color: #2d2d2d;
+        width: 200px;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+            padding: 0.8em 1.1em;
+            border: none;
+            background-color: #e8e8e8;
+        }
+    }
+
+    input {
+        width: 200px;
+        padding: 0.7em 1em;
+        border: none;
+        border-radius: 0.2em;
+        transition: all 0.2s;
+
+        &:focus {
+            outline: none;
+            padding: 0.8em 1.1em;
+            border: none;
+            background-color: #e8e8e8;
+        }
+
+        &::placeholder {
+            color: #2d2d2d;
+        }
+    }
+}
+
+@media (max-width: 764px) {
+    form {
+        margin-block-start: 1em;
+        
+        select {
+            width: 127px;
+        }
+
+        input {
+            width: 127px;
+        }
+    }
+}

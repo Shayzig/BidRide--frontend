@@ -1,0 +1,29 @@
+    .add-btn {
+        all: initial;
+        position: fixed;
+        bottom: 10%;
+        right: 10%;
+        width: 70px;
+        height: 70px;
+        background-color: #ff4d30;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.478);
+        transition: background-color 0.3s;
+        z-index: 998;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(#ff4d30, 5%);
+        }
+    }
+
+    @media(max-width:764px) {
+        .add-btn {
+            width: 45px;
+            height:45px;
+        }
+    }

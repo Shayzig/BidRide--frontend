@@ -1,0 +1,83 @@
+.car-edit {
+    width: 450px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0px 15px #00000025;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .action {
+        padding-block-start: 1.5em;
+        padding-inline: 1.5em;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+            margin: 0;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1.5em 4em 4em 4em;
+
+        label {
+            font-weight: 600;
+        }
+
+        input {
+            border: 1px solid lightgray;
+            padding: 0.5em;
+            border-radius: 0.2em;
+        }
+
+        select {
+            border: 1px solid lightgray;
+            padding: 0.4em 1em;
+        }
+
+        .errors {
+            margin: 0;
+        }
+        label {
+            margin-top: 1.5em;
+            font-family: sans-serif;
+            color: #191919;
+            margin-block-end: 0.3em;
+        }
+
+        input.ng-touched.ng-invalid {
+            border-left: 5px solid red;
+        }
+
+        input.ng-valid[required] {
+            border-left: 5px solid green;
+        }
+
+        button {
+            background-color: #ff4d30;
+            padding: 0.5em 1em;
+            border: none;
+            color: white;
+            font-family: sans-serif;
+            font-size: 1.2em;
+            width: 50%;
+            margin: auto;
+            margin-block-start: 2em;
+            transition: background-color 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken(#ff4d30, 5%);
+            }
+        }
+    }
+}

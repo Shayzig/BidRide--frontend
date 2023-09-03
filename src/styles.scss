@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+// Setup
+@import "./assets/scss/setup/variables";
+@import "./assets/scss/setup/functions";
+@import "./assets/scss/setup/mixins";
+
+// Basics
+@import "./assets/scss/basics/base";
+@import "./assets/scss/basics/layout";
+@import "./assets/scss/basics/modals";
+@import "./assets/scss/basics/animations";
+
+body {
+    margin: 0;
+    // background-color: #f8f8f8;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #191919;
+}
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+}
+
+
+.mat-body p, .mat-body-2 p, .mat-typography .mat-body p, .mat-typography .mat-body-2 p, .mat-typography p {
+    margin: 0;
+}
+

@@ -1,0 +1,52 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+
+    input {
+        border: 1px solid lightgray;
+        padding: 1em 1.5em;
+        border-radius: 0.15em;
+    }
+
+    button {
+        border: none;
+        border: 1 px solid lightgray;
+        padding: 1.4em 1.6em;
+        font-size: 1.2em;
+        font-family: 800;
+        border-radius: 0.15em;
+        background-color: #ff4d30;
+        transition: background-color 0.3s;
+        width: 60%;
+        margin: auto;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(#ff4d30, 5%);
+        }
+
+        &.disabled {
+            background-color: rgb(224, 224, 224);
+            color: rgb(163, 163, 163);
+            cursor: not-allowed;
+        }
+    }
+}
+
+@media (max-width: 764px) {
+    form {
+        input {
+            width: 70%;
+            margin: auto;
+        }
+        button {
+            padding: 0.8em 1em;
+            font-size: 1.3em;
+            font-weight: 800;
+            width: 70%;
+        }
+    }
+}

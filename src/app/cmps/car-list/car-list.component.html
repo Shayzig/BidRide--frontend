@@ -1,0 +1,5 @@
+<section class="car-list">
+    <car-preview *ngFor="let car of cars" [car]="car"
+     (remove)="remove.emit($event)"
+     ></car-preview>
+</section>

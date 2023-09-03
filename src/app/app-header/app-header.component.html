@@ -1,0 +1,38 @@
+<div class="menu-open" *ngIf="!isNavOpen" (click)="isNavOpen = !isNavOpen"><span nz-icon nzType="menu"
+        nzTheme="outline"></span></div>
+
+<div class="mobile-logo">M logo</div>
+
+<header [ngClass]="{ open: isNavOpen }">
+
+    <div (click)="isNavOpen = false" class="close-btn"><span nz-icon nzType="close" nzTheme="outline"></span></div>
+    <a  *ngIf="!isNavOpen" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">BidRide</a>
+
+    <nav>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        <a routerLink="car" routerLinkActive="active">Models</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a *ngIf="isNavOpen" [routerLink]="['login']" [queryParams]="{ isLogin: true }">Login</a>
+    </nav>
+
+    <div class="user" *ngIf="(loggedInUser$ | async) as loggedInUser; else userAuth">
+        <div class="register" nz-button nz-popover [(nzPopoverVisible)]="visible" nzPopoverTrigger="click"
+            [nzPopoverContent]="contentTemplate">
+            {{ loggedInUser.name | titlecase }}
+        </div>
+
+        <ng-template #contentTemplate>
+            <user-bids [userBids]="userFormattedBids"></user-bids>
+        </ng-template>
+
+        <div (click)="logout()" class="login"> Sign Out </div>
+    </div>
+
+    <ng-template #userAuth>
+        <div class="user">
+            <div class="login" [routerLink]="['login']" [queryParams]="{ isLogin: true }">Login</div>
+            <div class="register" [routerLink]="['login']" [queryParams]="{ isLogin: false }">Sign up</div>
+        </div>
+    </ng-template>
+
+</header>

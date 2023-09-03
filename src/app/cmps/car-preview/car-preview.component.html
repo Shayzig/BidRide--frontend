@@ -1,0 +1,28 @@
+<section class="car-preview">
+
+    <div class="best-bid">
+        <h3 class="title">Current Bid:</h3>
+        <h4 class="amount" *ngIf="bestBid.bidAmount > 0; else noBids">{{bestBid.bidAmount | currency }}</h4>
+        <h3 class="per-day" *ngIf="bestBid.bidAmount > 0">Per day</h3>
+
+        <ng-template #noBids>
+            <h4> No bids yet </h4>
+        </ng-template>
+    </div>
+
+
+    <div class="data">
+        <div class="details-title" *ngFor="let title of detailsTitle">{{ car[title.toLowerCase()] }}</div>
+    </div>
+
+    <div class="rent-period">
+        <div> {{car.rentStart | date: 'dd/MM/yyyy'}}</div> -
+        <div> {{car.rentEnd | date: 'dd/MM/yyyy'}}</div>
+    </div>
+    <section class="actions" *ngIf="(loggedInUser$ | async) as loggedInUser">
+        <button title="Delete" *ngIf="loggedInUser.isAdmin" class="remove-btn" (click)="remove.emit(car._id)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
+        <button title="Edit" *ngIf="loggedInUser.isAdmin" class="remove-btn" [routerLink]="['edit', car._id]"><span nz-icon nzType="edit" nzTheme="outline"></span></button>
+    </section>
+    <img [routerLink]="['car', car._id]" [src]="car.imgUrl" alt="">
+
+</section>

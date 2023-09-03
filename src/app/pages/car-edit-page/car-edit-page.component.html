@@ -1,0 +1,43 @@
+<section class="car-edit">
+
+    <div class="action">
+        <a class="back-btn" routerLink="/cars">Back</a>
+        <h2>{{car ? 'Edit' : 'Add' }} your car</h2>
+        <div>edit</div>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSaveCar()">
+
+        <label for="model">Model</label>
+        <input type="text" name="model" id="model" formControlName="model">
+        <ng-container *ngIf="form.controls['model'] as modelInput">
+            <p *ngIf="modelInput.touched && modelInput.invalid" class="errors">
+                <span *ngIf="modelInput.errors?.['required']">name is required!</span>
+            </p>
+        </ng-container>
+
+        <label for="mark">Mark</label>
+        <input type="text" name="mark" id="mark" formControlName="mark">
+        <ng-container *ngIf="form.controls['mark'] as markInput">
+            <p *ngIf="markInput.touched && markInput.invalid" class="errors">
+                <span *ngIf="markInput.errors?.['required']">Mark is required!</span>
+            </p>
+        </ng-container>
+
+        <label for="year">Year</label>
+        <input type="text" name="year" id="year" formControlName="year">
+        <ng-container *ngIf="form.controls['year'] as yearInput">
+            <p *ngIf="yearInput.touched && yearInput.invalid" class="errors">
+                <span *ngIf="yearInput.errors?.['required']">Year is required!</span>
+            </p>
+        </ng-container>
+
+        <label for="rentStart">Rent start at:</label>
+        <input type="date" name="rentStart" id="rentStart" formControlName="rentStart">
+
+        <label for="rentEnd">Rent end at:</label>
+        <input type="date" name="rentEnd" id="rentEnd" formControlName="rentEnd">
+
+        <button type="submit">Save</button>
+    </form>
+</section>

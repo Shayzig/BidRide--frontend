@@ -1,0 +1,34 @@
+<section *ngIf="car$ | async as car" class="car-details-container">
+    <img [src]="car?.imgUrl" alt="">
+
+    <div class="rate">
+        <nz-rate [ngModel]="2.5" nzAllowHalf></nz-rate> `
+    </div>
+
+    <div class="details">
+        <h3><span nz-icon nzType="safety" nzTheme="outline"></span> Saftey</h3>
+        <h3><span nz-icon nzType="rocket" nzTheme="outline"></span> Top speed</h3>
+        <h3><span nz-icon nzType="apple" nzTheme="outline"></span> Apple car</h3>
+        <h3><span nz-icon nzType="rise" nzTheme="outline"></span> Hybrid</h3>
+    </div>
+
+    <div class="user-bid">
+        <h4><span>Make</span> your price</h4>
+        <bid-rent [car]="car" [bestBid]="bestBid" (makeBid)="onMakeBid($event)"></bid-rent>
+    </div>
+
+    <div class="best-bid">
+        <ng-container *ngIf="bestBid.bidAmount > 0; else noBids">
+            <h5> Current bid :</h5>
+            <span>{{bestBid.bidAmount | currency:'USD':'symbol':'1.0'}}<span class="day">/ Per day</span> </span>
+            <h5> Bids end at: </h5>
+            <span> {{date | date: 'short'}} </span>
+        </ng-container>
+        <ng-template #noBids>
+            <h5 class="no-bids"> No bids yet...</h5>
+        </ng-template>
+    </div>
+
+    <div class="back-btn" routerLink="/car"> <span nz-icon nzType="arrow-left" nzTheme="outline"></span> </div>
+
+</section>

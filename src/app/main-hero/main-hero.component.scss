@@ -1,0 +1,114 @@
+@import "../../styles.scss";
+
+.bg-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.hero-container {
+    margin-block-start: 7em;
+    display: grid;
+    grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
+
+    .hero-content {
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1.4em;
+
+        h6 {
+            font-size: 2em;
+            font-weight: 600;
+            margin: 0.5em;
+        }
+
+        h1 {
+            font-size: 5.3em;
+            font-weight: 900;
+            line-height: 1em;
+            span {
+                color: #ff4d30;
+            }
+        }
+
+        p {
+            color: rgb(114, 114, 114);
+            z-index: 2;
+            font-size: 1.2em;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+
+            & > * {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                border-radius: 0.16em;
+                font-size: 1.2rem;
+                padding: 0.9em 1.8em;
+                cursor: pointer;
+                background-color: #ff4d30;
+                transition: background-color 0.3s;
+                border: 2px solid #ff4d30;
+
+                &:hover {
+                    background-color: darken(#ff4d30, 7%);
+                }
+            }
+            & > *:nth-child(2) {
+                background-color: #191919;
+                border: 2px solid #191919;
+
+                &:hover {
+                    background-color: #ffff;
+                    color: #191919;
+                }
+            }
+        }
+    }
+    .main-car {
+        grid-column: 2;
+        width: 100%;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-shape {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        height: 50%;
+    }
+    .hero-container {
+        margin-block-start: 2em;
+        grid-template-columns: 1fr;
+        row-gap: 2em;
+
+        .hero-content {
+            grid-column: 1;
+            align-items: center;
+            text-align: center;
+            gap: 0.6em;
+
+            h1 {
+                font-size: 3.5em;
+            }
+            
+            h6 {
+                font-size: 1.35em;
+            }
+        }
+        .main-car {
+            margin-block-start: 0.5em;
+            grid-column: 1;
+        }
+    }
+}

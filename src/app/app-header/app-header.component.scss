@@ -1,0 +1,136 @@
+.menu-open {
+    display: none;
+}
+.mobile-logo {
+    display: none;
+}
+
+header {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding-block: 1em;
+    font-size: 1.15em;
+    color: #515151;
+
+    img {
+        height: 100px;
+        cursor: pointer;
+    }
+
+    .close-btn {
+        display: none;
+    }
+
+    nav {
+        justify-self: center;
+        display: flex;
+        gap: 4.3em;
+        z-index: 1;
+        font-weight: 600;
+
+        a {
+            color: #515151;
+        }
+    }
+
+    .user {
+        display: flex;
+        justify-self: end;
+        & > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1;
+            padding: 0.8em 2.1em;
+        }
+        .sign-in {
+            transition: color 0.3s;
+            &:hover {
+                color: #ff4d30;
+            }
+        }
+        .register {
+            position: relative;
+            background-color: #ff4d30;
+            color: white;
+            border-radius: 0.16em;
+            box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.35);
+            transition: background-color 0.3s;
+            z-index: 997;
+
+            .user-details {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: 100%;
+                height: 300px;
+                width: 350px;
+                box-shadow: 0 0 10px lightgray;
+                color: black;
+                padding: 0.5em 1.3em;
+                background-color: white;
+            }
+            &:hover {
+                background-color: darken(#ff4d30, 4%);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-logo {
+        display: block;
+        margin-block-start: 2em;
+    }
+    .menu-open {
+        display: block;
+        position: absolute;
+        top: 3.5%;
+        right: 20px;
+        font-size: 1.5em;
+    }
+    header {
+        position: fixed;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 2em;
+        height: 39%;
+        width: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.331);
+        translate: 100%;
+        transition: translate 0.4s;
+        z-index: 998;
+        background-color: #fff;
+
+        .close-btn {
+            display: block;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        &.open {
+            translate: 0;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 100%;
+            gap: 1em;
+            font-size: 1.05em;
+        }
+        .user {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+<div class="user-bids">
+    <div class="user-bid" *ngFor="let bid of userBids">
+        <div class="bid-detail">You Offered <span>{{ bid.bidAmount | currency }}</span> on {{ bid.toCar }}</div>
+        <div class="bid-time">No more bids at: {{ bid.date | date: 'short' }}</div>
+    </div>
+</div>

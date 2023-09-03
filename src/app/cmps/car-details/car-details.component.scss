@@ -1,0 +1,187 @@
+.car-details-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 100px 200px;
+    box-shadow: -1px 1px 18px #00000011;
+    border-radius: 0.3em;
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 2.2em;
+    height: 800px;
+    width: 800px;
+    z-index: 999;
+
+    .details {
+        grid-column: 1/-1;
+        grid-row: 2;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        gap: 1.9em;
+        margin-block-start: 2em;
+
+        & > *  {
+            font-size: 1.2em;
+            color: rgb(84, 84, 84);
+        }
+    }
+    .rate {
+        grid-column: 1/-1;
+        grid-row: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .user-bid {
+        grid-column: 1/3;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(211, 211, 211, 0.223);
+        padding: 1.5em;
+
+        h4 {
+            span {
+                color: #ff4d30;
+            }
+            color: rgb(49, 49, 49);
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+    }
+
+    .best-bid {
+        grid-column: 3;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 0.5em;
+        text-align: center;
+        // background-color: #ff4d30;
+        color: white;
+        height: 100%;
+
+        h5 {
+            font-size: 1.2em;
+            margin: 0;
+            color: #313131;
+        }
+
+        .no-bids {
+            color: #ff4d30;
+            border: 1px solid #ff4d30;
+            padding: 0.7em;
+            border-radius: 0.2em;
+            font-weight: 600;
+        }
+
+        span {
+            font-weight: 800;
+            font-size: 1.6em;
+            color: #ff4d30;
+            background-color: rgba(238, 238, 238, 0.35);
+            padding: 1em;
+
+            .day {
+                font-size: 0.7em;
+            }
+        }
+    }
+}
+
+.back-btn {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    border: none;
+    cursor: pointer;
+}
+
+.data {
+    grid-column: 1;
+    display: flex;
+    gap: 0.5em;
+    z-index: 2;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: rgb(77, 77, 77);
+}
+
+img {
+    width: 60%;
+    margin: auto;
+    align-self: center;
+    grid-row: 1;
+    grid-column: 1/-1;
+    z-index: 2;
+}
+
+@media (max-width: 764px) {
+    .car-details-container {
+        width: 90%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-inline: 0.4em;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.145);
+        border: 1px solid rgb(213, 213, 213);
+
+        .details {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2em;
+            margin: 0;
+
+            h2 {
+                font-size: 1.2em;
+                margin: 0;
+            }
+        }
+
+        .user-bid {
+            padding: 0.5em;
+            h4 {
+                text-align: center;
+                font-size: 2em;
+            }
+        }
+
+        img {
+            margin: 0;
+            width: 60%;
+        }
+
+        .best-bid {
+            height: 130px;
+            width: 100%;
+            margin-block-start: 0.9em;
+            background-color: white;
+            border: none;
+            box-shadow: none;
+            padding-block: 0.5em;
+
+            h5 {
+                font-size: 1.2em;
+                margin: 0;
+                color: #191919;
+            }
+
+            span {
+                font-weight: 800;
+                font-size: 1.6em;
+                color: #ff4d30;
+
+                .day {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+}

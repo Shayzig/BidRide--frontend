@@ -1,0 +1,7 @@
+<ul class="car-list">
+    <li class="car-preview" *ngFor="let car of cars"
+     (click)="onSelectCar(car)">
+        <media-car-preview [car]="car">
+        </media-car-preview>
+    </li>
+</ul>

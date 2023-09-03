@@ -1,0 +1,42 @@
+.car-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    .car-preview {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-size: 1.2em;
+        font-weight: 600;
+        background-color: lightgray;
+        width: 100%;
+        border-radius: 0.1em;
+        padding: 1em 0.9em;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #ff4d30;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .car-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 100px);
+        gap: 0;
+        padding: 0;
+
+        .car-preview {
+            justify-content: center;
+            box-shadow: 0 0 2px white;
+        }
+    }
+}

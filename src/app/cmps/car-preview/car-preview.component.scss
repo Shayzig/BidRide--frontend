@@ -1,0 +1,122 @@
+.car-preview {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px auto 1fr ;
+    box-shadow: -1px 1px 18px #00000011;
+    border: 0.5px solid rgba(211, 211, 211, 0.712);
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 1.6em;
+    width: 450px;
+    height: 400px;
+
+    .best-bid {
+        grid-column: 3;
+        align-self: start;
+        justify-self: end;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 5px lightgray;
+        padding: 0.5em 0.8em;
+        border-radius: 0.1em;
+        background-color: #ff4d30;
+        width: 120px;
+
+        & > * {
+            color: white;
+        }
+        .amount {
+            font-weight: 600;
+            font-size: 1.7em;
+        }
+
+        .per-day {
+            font-size: 1em;
+        }
+
+        h3,
+        h4 {
+            margin: 0;
+        }
+    }
+
+    .data {
+        grid-column: 1;
+        grid-row: 1/-1;
+        align-self: start;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        z-index: 2;
+
+        & > :nth-child(2) {
+            background-color: rgb(233, 233, 233);
+            padding: 0.3em 0.2em;
+            border-radius: 0.2em;
+        }
+
+        & > * {
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+    }
+
+    .rent-period {
+        grid-column: 1;
+        grid-row: 2;
+        display: flex;
+        gap: 0.5em;
+        font-weight: 800;
+        color: #ff4d30;
+    }
+
+    .actions {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        opacity: 0;
+        transform: translateX(-10%);
+        transition-duration: 0.3s;
+        transition-property: transform, opacity;
+        z-index: 3;
+
+        .remove-btn {
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.105);
+            border: 0.5px solid lightgray;
+            transition: 0.15s;
+            cursor: pointer;
+            &:hover {
+                background-color: orangered;
+                color: white;
+            }
+        }
+    }
+
+    &:hover .actions {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    img {
+        width: 85%;
+        // height: 100%;
+        align-self: end;
+        justify-self: center;
+        grid-row: 2/4;
+        grid-column: 1/-1;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 764px) {
+    .car-preview {
+        width: auto;
+    }
+}

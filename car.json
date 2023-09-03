@@ -1,0 +1,80 @@
+[
+    {
+        "model": "VW",
+        "mark": "Golf 6",
+        "year": "2019",
+        "doors": "5",
+        "ac": "yes",
+        "transmission": "Manual",
+        "imgUrl": ".../../assets/rental/2.jpeg",
+        "price": 49,
+        "rentStart": 213233344, 
+        "rentEnd": 223344455,   
+        "bids": []
+    },
+    {
+        "model": "Audi",
+        "mark": "A1 S-Line",
+        "year": "2023",
+        "doors": "4",
+        "ac": "yes",
+        "transmission": "Automatic",
+        "imgUrl": ".../../assets/rental/1.jpeg",
+        "price": 45,
+        "rentStart": 233344455, 
+        "rentEnd": 243455566,   
+        "bids": []
+    },
+    {
+        "model": "Toyota",
+        "mark": "Camry",
+        "year": "2021",
+        "doors": "4",
+        "ac": "yes",
+        "transmission": "Automatic",
+        "imgUrl": ".../../assets/rental/3.jpeg",
+        "price": 35,
+        "rentStart": 253455566, 
+        "rentEnd": 263566677,   
+        "bids": []
+    },
+    {
+        "model": "BMW",
+        "mark": "Modernline",
+        "year": "2023",
+        "doors": "4",
+        "ac": "yes",
+        "transmission": "Automatic",
+        "imgUrl": ".../../assets/rental/4.jpeg",
+        "price": 23,
+        "rentStart": 273566677, 
+        "rentEnd": 283677788,   
+        "bids": []
+    },
+    {
+        "model": "Mercedes",
+        "mark": "Benz GLK",
+        "year": "2018",
+        "doors": "5",
+        "ac": "yes",
+        "transmission": "Automatic",
+        "imgUrl": ".../../assets/rental/5.jpeg",
+        "price": 33,
+        "rentStart": 293677788, 
+        "rentEnd": 303788899,   
+        "bids": []
+    },
+    {
+        "model": "VW",
+        "mark": "Passat CC",
+        "year": "2020",
+        "doors": "4",
+        "ac": "yes",
+        "transmission": "Automatic",
+        "imgUrl": ".../../assets/rental/6.jpeg",
+        "price": 53,
+        "rentStart": 313788899, 
+        "rentEnd": 323899900,   
+        "bids": []
+    }
+]

@@ -1,0 +1,28 @@
+<section class="header">
+    <h5>Vehicle Models</h5>
+    <h2>Our Rental fleet</h2>
+    <p>Choose from a variety of our amazing vehicles to rent for your next adventure or business trip</p>
+</section>
+
+<div class="media">
+    <div class="car-picker">
+        <media-car-list [cars]="cars" (onSelect)="onSelectCar($event)">
+        </media-car-list>
+    </div>
+
+    <div class="display">
+        <img [src]="selectedCar.imgUrl" alt="">
+    </div>
+
+    <div class="table-container">
+        <div class="rent-price">Just {{ '$' + selectedCar.price }} per day!</div>
+        <div class="car-details">
+            <div class="line" *ngFor="let title of detailsTitle; index as idx">
+                <div class="title">{{ title }}</div> <span>|</span>
+                <div class="details-title">{{ selectedCar?.[title.toLowerCase()] }}</div>
+            </div>
+            <div class="reserve-btn">Reserve now</div>
+        </div>
+    </div>
+
+</div>

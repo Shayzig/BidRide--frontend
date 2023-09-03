@@ -1,0 +1,5 @@
+    <car-filter></car-filter>
+    <button class="add-btn" routerLink="edit"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
+    <car-list [cars]="cars$ | async" (remove)="onRemoveCar($event)">
+    </car-list>
+    <router-outlet></router-outlet>

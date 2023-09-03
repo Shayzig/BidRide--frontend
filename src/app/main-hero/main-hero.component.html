@@ -1,0 +1,19 @@
+<img class="bg-shape" src="../../assets/Home/bg-shape.png" alt="">
+
+<div class="hero-container">
+    <div class="hero-content">
+        <h6 *ngIf="(loggedInUser$ | async) as loggedInUser; else simpleGreet">Hello {{ loggedInUser.name | titlecase }},
+        </h6>
+        <ng-template #simpleGreet>
+            <h6>Hello, </h6>
+        </ng-template>
+        <h1>Save <span>big</span> with our car and your price!</h1>
+        <p>Rent the car of your dreams. Unbeatable prices,
+            flexible pick-up options and much more. Just make your bid.</p>
+        <div class="actions">
+            <div class="book-btn" routerLink="car">BidRide</div>
+            <div class="book-btn">Learn more</div>
+        </div>
+    </div>
+    <img class="main-car" src="../../assets/Home/main-car.png" alt="">
+</div>

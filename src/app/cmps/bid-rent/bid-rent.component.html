@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="makeBid.emit(this.form.value)">
+    <input type="number" formControlName="bids" id="bids" placeholder="$">
+
+    <button [ngClass]="{'disabled': bestBid.bidAmount && form.controls['bids'].value <= bestBid.bidAmount || form.controls['bids'].value > 1000}"
+        [disabled]="bestBid.bidAmount && (form.controls['bids'].value <= bestBid.bidAmount || form.controls['bids'].value > 1000)">
+        Make a bid!
+    </button>
+</form>

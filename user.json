@@ -1,0 +1,14 @@
+[
+    {
+        "name": "admin",
+        "username": "admin",
+        "isAdmin": true,
+        "bids": []
+    },
+    {
+        "name": "guest",
+        "username": "guest",
+        "isAdmin": false,
+        "bids": []
+    }
+]

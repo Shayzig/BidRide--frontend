@@ -1,0 +1,108 @@
+.header {
+    margin-block-start: 10em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    margin-block-end: 1.5em;
+    text-align: center;
+
+    & > *:first-child {
+        font-size: 1.2em;
+    }
+    & > *:nth-child(2) {
+        font-size: 2.5em;
+    }
+    & > *:nth-child(3) {
+        color: grey;
+    }
+}
+
+.media {
+    margin-block-start: 5em;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    margin-block-end: 5em;
+    .car-picker {
+        justify-self: start;
+        width: 100%;
+        height: 100%;
+    }
+
+    .display {
+        align-self: center;
+        justify-self: center;
+    }
+
+    .car-details {
+        grid-column: 3;
+        height: 100%;
+
+        & > :first-child {
+            border-top: 2px solid lightgray;
+        }
+        .line {
+            display: grid;
+            grid-template-columns: 1fr 10px 1fr;
+            border-bottom: 2px solid lightgray;
+            border-left: 2px solid lightgray;
+            border-right: 2px solid lightgray;
+            border-collapse: collapse;
+            padding: 1em 0;
+            .title {
+                justify-self: center;
+            }
+            .details-title {
+                justify-self: center;
+            }
+        }
+    }
+    .table-container {
+        .rent-price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ff4d30;
+            padding: 0.5em 0;
+            color: white;
+        }
+
+        .reserve-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ff4d30;
+            padding: 0.75em 0;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: darken(#ff4d30, 7%);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        margin-block-end: 0;
+        margin-block-start: 5em;
+    }
+    .media {
+        margin-block-start: 2em;
+        grid-template-columns: 1fr;
+
+        .car-picker {
+            justify-self: center;
+            width: max-content;
+        }
+        .display {
+            margin-block-start: 2em;
+            height: 250px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    gap: 0.2em;
+    align-items: center;
+}
+
+@media (max-width: 764px) {
+    :host {
+        justify-content: center;
+        flex-direction: column;
+        & > * {
+            margin: 0;
+        }
+    }
+}

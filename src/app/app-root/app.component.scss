@@ -1,0 +1,13 @@
+.main-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    & > * {
+        grid-column: 2;
+    }
+}
+
+@media (max-width: 990px) {
+    .main-layout {
+        grid-template-columns: 15px 1fr 15px;
+    }
+}
