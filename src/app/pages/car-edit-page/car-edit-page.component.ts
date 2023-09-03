@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, filter, map } from 'rxjs';
 import { CarService } from 'src/app/services/car.service';
+import { LoaderService } from 'src/app/services/loader.service';
 import { CustomValidators } from 'src/app/validators/custom-validators';
 // import { CarService } from 'src/app/services/car.service.back';
 
@@ -20,6 +21,7 @@ export class CarEditPageComponent implements OnInit {
   private fb = inject(FormBuilder)
   private route = inject(ActivatedRoute)
   private router = inject(Router)
+  private loaderService = inject(LoaderService)
 
   form!: FormGroup
   dateFormat = 'yyyy/MM/dd';
@@ -38,6 +40,7 @@ export class CarEditPageComponent implements OnInit {
   car!: any
 
   ngOnInit(): void {
+    this.loaderService.setIsLoading(false)
     this.route.data
       .pipe(
         map(data => data['car']),

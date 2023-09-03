@@ -5,6 +5,7 @@ import { take } from 'rxjs/operators'
 import { Bid, Car } from 'src/app/models/car.model'
 import { User } from 'src/app/models/user.model'
 import { CarService } from 'src/app/services/car.service'
+import { LoaderService } from 'src/app/services/loader.service'
 // import { CarService } from 'src/app/services/car.service.back'
 import { UserService } from 'src/app/services/user.service'
 
@@ -18,6 +19,7 @@ export class CarDetailsComponent implements OnInit {
   private route = inject(ActivatedRoute)
   private carService = inject(CarService)
   private userService = inject(UserService)
+  private loaderService = inject(LoaderService)
 
   detailsTitle: Array<string> = ['Model', 'Mark', 'Year', 'Doors', 'AC', 'Transmission', 'Fuel']
 
@@ -30,6 +32,7 @@ export class CarDetailsComponent implements OnInit {
   car: any = null
 
   ngOnInit(): void {
+    this.loaderService.setIsLoading(false)
     this.loggedInUser$ = this.userService.loggedInUser$
 
     this.car$ = this.route.data.pipe(
@@ -42,6 +45,7 @@ export class CarDetailsComponent implements OnInit {
   }
 
   bestOffer(car: Car) {
+    this.car = car
     for (const bid of car.bids) {
       if (bid.bidAmount > this.bestBid.bidAmount) {
         this.bestBid = bid;
@@ -79,7 +83,7 @@ export class CarDetailsComponent implements OnInit {
             this.carService.saveCar(updatedCar).subscribe({
               next: () => this.bestOffer(updatedCar),
             })
-            
+
             this.userService.updateUser(updatedUser).subscribe({
             })
           }

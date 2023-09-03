@@ -37,6 +37,8 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { UserBidsComponent } from './cmps/user-bids/user-bids.component';
 import { NzRateModule } from 'ng-zorro-antd/rate';
+import { LoaderComponent } from './cmps/loader/loader.component';
+import { DateDescPipe } from './pipes/date-desc.pipe';
 
 
 
@@ -66,6 +68,8 @@ registerLocaleData(en);
         LoginSignupComponent,
         BidRentComponent,
         UserBidsComponent,
+        LoaderComponent,
+        DateDescPipe,
     ],
     imports: [
         BrowserModule,
