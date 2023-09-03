@@ -1,7 +1,7 @@
 <section class="car-edit">
 
     <div class="action">
-        <a class="back-btn" routerLink="/cars">Back</a>
+        <a class="back-btn" routerLink="/car">Back</a>
         <h2>{{car ? 'Edit' : 'Add' }} your car</h2>
         <div>edit</div>
     </div>
@@ -28,7 +28,7 @@
         <input type="text" name="year" id="year" formControlName="year">
         <ng-container *ngIf="form.controls['year'] as yearInput">
             <p *ngIf="yearInput.touched && yearInput.invalid" class="errors">
-                <span *ngIf="yearInput.errors?.['required']">Year is required!</span>
+                <span *ngIf="yearInput.errors?.['unRelevantYear']">*1900 - 2023 only</span>
             </p>
         </ng-container>
 

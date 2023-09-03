@@ -8,6 +8,14 @@ export class CustomValidators {
         }
         return null
     }
+    static unRelevantYear(control: AbstractControl) {
+        const year = parseInt(control.value, 10)
+        if (isNaN(year) || year < 1900 || year > 2023) {
+            return { unRelevantYear: true };
+        }
+        return null;
+    }
+    
 
     static nameTaken(control: AbstractControl) {
         return new Promise(resolve => {

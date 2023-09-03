@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, filter, map } from 'rxjs';
 import { CarService } from 'src/app/services/car.service';
+import { CustomValidators } from 'src/app/validators/custom-validators';
+// import { CarService } from 'src/app/services/car.service.back';
 
 
 @Component({
@@ -26,7 +28,7 @@ export class CarEditPageComponent implements OnInit {
     this.form = this.fb.group({
       model: ['', Validators.required],
       mark: ['', Validators.required],
-      year: ['', Validators.required],
+      year: ['', [Validators.required, CustomValidators.unRelevantYear]],
       rentStart: [this.formatTime(Date.now())],
       rentEnd: [this.formatTime(Date.now())],
       imgUrl: `.../../assets/rental/default.png`
@@ -51,10 +53,10 @@ export class CarEditPageComponent implements OnInit {
 
   onSaveCar() {
     const car = { ...this.car, ...this.form.value }
-      this.carService.saveCar(car)
-        .subscribe({
-          next: () => this.router.navigateByUrl('/cars')
-        })
+    this.carService.saveCar(car)
+      .subscribe({
+        next: () => this.router.navigateByUrl('/car')
+      })
   }
 
   formatTime(date: Date | number | string) {
