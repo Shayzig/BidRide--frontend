@@ -3,6 +3,7 @@
 }
 .mobile-logo {
     display: none;
+   
 }
 
 header {
@@ -82,8 +83,10 @@ header {
 
 @media (max-width: 768px) {
     .mobile-logo {
-        display: block;
-        margin-block-start: 2em;
+        display: inline;
+        img {
+            height: 70px;
+        }
     }
     .menu-open {
         display: block;

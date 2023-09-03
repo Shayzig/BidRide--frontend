@@ -39,6 +39,8 @@ import { UserBidsComponent } from './cmps/user-bids/user-bids.component';
 import { NzRateModule } from 'ng-zorro-antd/rate';
 import { LoaderComponent } from './cmps/loader/loader.component';
 import { DateDescPipe } from './pipes/date-desc.pipe';
+import { NaturalTypePipe } from './pipes/natural-type.pipe';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 
 
@@ -70,6 +72,8 @@ registerLocaleData(en);
         UserBidsComponent,
         LoaderComponent,
         DateDescPipe,
+        NaturalTypePipe,
+        ClickOutsideDirective
     ],
     imports: [
         BrowserModule,

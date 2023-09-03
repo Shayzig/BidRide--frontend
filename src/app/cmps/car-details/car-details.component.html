@@ -1,5 +1,5 @@
-<section *ngIf="car$ | async as Acar" class="car-details-container">
-    <img [src]="Acar?.imgUrl" alt="">
+<section *ngIf="car$ | async as car" class="car-details-container">
+    <img [src]="car?.imgUrl" alt="">
 
 
     <div class="rate">
@@ -22,8 +22,9 @@
         <ng-container *ngIf="bestBid.bidAmount > 0; else noBids">
             <div class="curr-bid">
                 <h5> Current bid :</h5>
-                <h4>{{bestBid.bidAmount | currency:'USD':'symbol':'1.0' }} <span class="day">/ Per day</span> </h4>
-                <h6>  {{car.bids[car.bids.length-1].time | dateDesc}},   By: <span>{{car.bids[car.bids.length-1].byUser}}</span></h6>
+                <h4> {{bestBid.bidAmount | currency:'USD':'symbol':'1.0' }} <span class="day">/ Per day</span> </h4>
+                <h6> {{car.bids[car.bids.length-1].time | dateDesc}}, By:
+                    <span>{{car.bids[car.bids.length-1].byUser}}</span></h6>
             </div>
 
             <div class="bid-timline">

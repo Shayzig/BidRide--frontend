@@ -12,6 +12,8 @@ export class MainHeroComponent implements OnInit {
   private userService = inject(UserService)
 
   loggedInUser$!: Observable<User | null>
+  lorem = `Rent the car of your dreams. Unbeatable prices,
+  flexible pick-up options and much more. Just make your bid.`
 
   ngOnInit(): void {
     this.loggedInUser$ = this.userService.loggedInUser$
